@@ -19,6 +19,10 @@
 @end
 
 @implementation MainViewController
+- (IBAction)button:(id)sender {
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad
 {
@@ -36,13 +40,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"modalLogin"]) {
-        // do something
-    }
 }
 
 - (void)didReceiveMemoryWarning

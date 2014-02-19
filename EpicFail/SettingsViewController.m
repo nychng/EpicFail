@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface SettingsViewController ()
 @property (strong, nonatomic) IBOutlet UITableViewCell *logoutCell;
@@ -66,8 +67,26 @@
         //LoginViewController *viewController = [[LoginViewController alloc] init];
         //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
         //[self.navigationController popToViewController:(UIViewController *)viewController animated:YES];
-        //[self.navigationController popToRootViewControllerAnimated:YES];
-        [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        //[self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"%@", self.navigationController.storyboard);
+        
+        AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
+        
+        UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+        appDelegateTemp.window.rootViewController = navigation;
+
+
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"main" bundle: nil];
+//        LoginViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+//        [self.navigationController pushViewController:viewController animated:YES];
+        
+//        LoginViewController *loginViewController = [[LoginViewController alloc] init];
+//        [self.navigationController pushViewController:loginViewController animated:NO];
+//        [self dismissViewControllerAnimated:NO completion:nil];
+        
     }
 }
 

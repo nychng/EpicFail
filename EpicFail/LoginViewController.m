@@ -32,10 +32,10 @@
 {
     // Check if user is cached and linked to Facebook, if so, bypass login
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        NSLog(@"%@", [PFUser currentUser]);
-        [self performSegueWithIdentifier:@"showMain" sender:self];
+        //NSLog(@"%@", [PFUser currentUser]);
+        [self.navigationController pushViewController:[[MainViewController alloc] init] animated:NO];
     } else {
-        NSLog(@"hello");
+        //NSLog(@"hello");
     }
 }
 
@@ -60,11 +60,12 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            [self performSegueWithIdentifier:@"showMain" sender:self];
+            [self.navigationController pushViewController:[[MainViewController alloc] init] animated:NO];
         } else {
             NSLog(@"User with facebook logged in!");
             NSLog(@"%@", [PFUser currentUser]);
-            [self performSegueWithIdentifier:@"showMain" sender:self];
+            MainViewController *mvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            [self.navigationController pushViewController:mvc animated:NO];
         }
     }];
     [self.activityIndicator startAnimating]; // Show loading indicator until login is finished
