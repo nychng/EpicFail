@@ -189,11 +189,30 @@
                             <constraint firstAttribute="centerY" secondItem="DcM-Fx-MKR" secondAttribute="centerY" id="lHZ-e8-ii2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="Z7h-1E-pvt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2757" y="547"/>
+            <point key="canvasLocation" x="2757" y="477"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="Mpu-If-5WN">
+            <objects>
+                <viewController id="nFa-ZR-I7p" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SIP-gu-Bue"/>
+                        <viewControllerLayoutGuide type="bottom" id="D6Y-x7-fo6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EMZ-z8-baR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="Td9-4m-rQM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNb-Sa-1fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2757" y="1171"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Cx6-Ai-JCo">
@@ -247,17 +266,18 @@
                     <connections>
                         <segue destination="eDa-d5-fuv" kind="relationship" relationship="viewControllers" id="Mcl-az-hCi"/>
                         <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                        <segue destination="nFa-ZR-I7p" kind="relationship" relationship="viewControllers" id="iIB-z4-O6m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2236" y="180"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller-->
         <scene sceneID="GSk-bL-Xgc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eDa-d5-fuv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sx1-1A-TIs"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="sx1-1A-TIs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hC2-rt-Ben">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -273,9 +293,6 @@
             <point key="canvasLocation" x="2757" y="-216"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="second" width="30" height="30"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D35C50E18B488CD00E01569 /* SettingsViewController.m */; };
+		2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EB9718B5074800E38C1D /* CameraViewController.m */; };
 		2DCE30BE18B20C9E00E3B050 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30BD18B20C9E00E3B050 /* Foundation.framework */; };
 		2DCE30C018B20C9E00E3B050 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30BF18B20C9E00E3B050 /* CoreGraphics.framework */; };
 		2DCE30C218B20C9E00E3B050 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30C118B20C9E00E3B050 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 /* Begin PBXFileReference section */
 		2D35C50D18B488CD00E01569 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2D35C50E18B488CD00E01569 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		2DA8EB9618B5074800E38C1D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		2DA8EB9718B5074800E38C1D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		2DCE30BA18B20C9E00E3B050 /* EpicFail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicFail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCE30BD18B20C9E00E3B050 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DCE30BF18B20C9E00E3B050 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 				2DCE30D618B20C9E00E3B050 /* SecondViewController.m */,
 				2D35C50D18B488CD00E01569 /* SettingsViewController.h */,
 				2D35C50E18B488CD00E01569 /* SettingsViewController.m */,
+				2DA8EB9618B5074800E38C1D /* CameraViewController.h */,
+				2DA8EB9718B5074800E38C1D /* CameraViewController.m */,
 				2DCE30D818B20C9E00E3B050 /* Images.xcassets */,
 				2DCE30C418B20C9E00E3B050 /* Supporting Files */,
 			);
@@ -313,6 +318,7 @@
 				2DCE30D418B20C9E00E3B050 /* MainViewController.m in Sources */,
 				2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */,
 				2DCE30CA18B20C9E00E3B050 /* main.m in Sources */,
+				2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */,
 				2DCE310B18B2225500E3B050 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
