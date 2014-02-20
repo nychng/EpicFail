@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D35C50E18B488CD00E01569 /* SettingsViewController.m */; };
 		2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EB9718B5074800E38C1D /* CameraViewController.m */; };
+		2DA8EBE218B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */; };
+		2DA8EBE618B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE418B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		2DCE30BE18B20C9E00E3B050 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30BD18B20C9E00E3B050 /* Foundation.framework */; };
 		2DCE30C018B20C9E00E3B050 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30BF18B20C9E00E3B050 /* CoreGraphics.framework */; };
 		2DCE30C218B20C9E00E3B050 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30C118B20C9E00E3B050 /* UIKit.framework */; };
@@ -53,6 +55,10 @@
 		2D35C50E18B488CD00E01569 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2DA8EB9618B5074800E38C1D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		2DA8EB9718B5074800E38C1D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		2DA8EBE118B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		2DA8EBE418B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		2DA8EBE518B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		2DCE30BA18B20C9E00E3B050 /* EpicFail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicFail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCE30BD18B20C9E00E3B050 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DCE30BF18B20C9E00E3B050 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +130,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DA8EBE318B5ED7600E38C1D /* TPKeyboardAvoidingScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2DA8EBE418B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				2DA8EBE518B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */,
+				2DA8EBE118B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.h */,
+			);
+			name = TPKeyboardAvoidingScrollView;
+			sourceTree = "<group>";
+		};
 		2DCE30B118B20C9E00E3B050 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +185,7 @@
 		2DCE30C318B20C9E00E3B050 /* EpicFail */ = {
 			isa = PBXGroup;
 			children = (
+				2DA8EBE318B5ED7600E38C1D /* TPKeyboardAvoidingScrollView */,
 				2DCE30CF18B20C9E00E3B050 /* Main.storyboard */,
 				2DCE310918B2225500E3B050 /* LoginViewController.h */,
 				2DCE310A18B2225500E3B050 /* LoginViewController.m */,
@@ -314,8 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCE30D718B20C9E00E3B050 /* HomeViewController.m in Sources */,
+				2DA8EBE218B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2DCE30CE18B20C9E00E3B050 /* AppDelegate.m in Sources */,
 				2DCE30D418B20C9E00E3B050 /* ProfileViewController.m in Sources */,
+				2DA8EBE618B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */,
 				2DCE30CA18B20C9E00E3B050 /* main.m in Sources */,
 				2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */,
