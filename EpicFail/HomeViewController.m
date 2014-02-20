@@ -20,6 +20,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
     [self fetchImages];
 }
 
@@ -32,17 +38,15 @@
 - (void)fetchImages
 {
     PFQuery *query = [PFQuery queryWithClassName:@"UserPhoto"];
-    self.imageList = [NSMutableArray arrayWithArray:[query findObjects]];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        // If there are photos, we start extracting the data
-//        // Save a list of object IDs while extracting this data
-//        if (objects.count > 0) {
-//            for (PFObject *eachObject in objects) {
-//                [self.imageList addObject:[eachObject objectId]];
-//            }
-//            self.imageList = [NSMutableArray arrayWithArray:objects];
-//        }
-//    }];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count > 0) {
+            for (PFObject *eachObject in objects) {
+                [self.imageList addObject:[eachObject objectId]];
+            }
+            self.imageList = [NSMutableArray arrayWithArray:objects];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -63,7 +67,6 @@
     }
     
     PFObject *object = self.imageList[indexPath.row];
-    NSLog(@"%@", [object description]);
     PFFile *file = [object objectForKey:@"imageFile"];
     NSData *imageData = [file getData];
     UIImage *image = [UIImage imageWithData:imageData];
