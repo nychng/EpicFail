@@ -16,8 +16,8 @@
 		2DCE30CA18B20C9E00E3B050 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE30C918B20C9E00E3B050 /* main.m */; };
 		2DCE30CE18B20C9E00E3B050 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE30CD18B20C9E00E3B050 /* AppDelegate.m */; };
 		2DCE30D118B20C9E00E3B050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCE30CF18B20C9E00E3B050 /* Main.storyboard */; };
-		2DCE30D418B20C9E00E3B050 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE30D318B20C9E00E3B050 /* MainViewController.m */; };
-		2DCE30D718B20C9E00E3B050 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE30D618B20C9E00E3B050 /* SecondViewController.m */; };
+		2DCE30D418B20C9E00E3B050 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE30D318B20C9E00E3B050 /* ProfileViewController.m */; };
+		2DCE30D718B20C9E00E3B050 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE30D618B20C9E00E3B050 /* HomeViewController.m */; };
 		2DCE30D918B20C9E00E3B050 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCE30D818B20C9E00E3B050 /* Images.xcassets */; };
 		2DCE30E018B20C9E00E3B050 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30DF18B20C9E00E3B050 /* XCTest.framework */; };
 		2DCE30E118B20C9E00E3B050 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCE30BD18B20C9E00E3B050 /* Foundation.framework */; };
@@ -64,10 +64,10 @@
 		2DCE30CC18B20C9E00E3B050 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2DCE30CD18B20C9E00E3B050 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2DCE30D018B20C9E00E3B050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2DCE30D218B20C9E00E3B050 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		2DCE30D318B20C9E00E3B050 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		2DCE30D518B20C9E00E3B050 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2DCE30D618B20C9E00E3B050 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2DCE30D218B20C9E00E3B050 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		2DCE30D318B20C9E00E3B050 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		2DCE30D518B20C9E00E3B050 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		2DCE30D618B20C9E00E3B050 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2DCE30D818B20C9E00E3B050 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2DCE30DE18B20C9E00E3B050 /* EpicFailTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicFailTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCE30DF18B20C9E00E3B050 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -171,10 +171,10 @@
 				2DCE30CF18B20C9E00E3B050 /* Main.storyboard */,
 				2DCE310918B2225500E3B050 /* LoginViewController.h */,
 				2DCE310A18B2225500E3B050 /* LoginViewController.m */,
-				2DCE30D218B20C9E00E3B050 /* MainViewController.h */,
-				2DCE30D318B20C9E00E3B050 /* MainViewController.m */,
-				2DCE30D518B20C9E00E3B050 /* SecondViewController.h */,
-				2DCE30D618B20C9E00E3B050 /* SecondViewController.m */,
+				2DCE30D218B20C9E00E3B050 /* ProfileViewController.h */,
+				2DCE30D318B20C9E00E3B050 /* ProfileViewController.m */,
+				2DCE30D518B20C9E00E3B050 /* HomeViewController.h */,
+				2DCE30D618B20C9E00E3B050 /* HomeViewController.m */,
 				2D35C50D18B488CD00E01569 /* SettingsViewController.h */,
 				2D35C50E18B488CD00E01569 /* SettingsViewController.m */,
 				2DA8EB9618B5074800E38C1D /* CameraViewController.h */,
@@ -313,9 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCE30D718B20C9E00E3B050 /* SecondViewController.m in Sources */,
+				2DCE30D718B20C9E00E3B050 /* HomeViewController.m in Sources */,
 				2DCE30CE18B20C9E00E3B050 /* AppDelegate.m in Sources */,
-				2DCE30D418B20C9E00E3B050 /* MainViewController.m in Sources */,
+				2DCE30D418B20C9E00E3B050 /* ProfileViewController.m in Sources */,
 				2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */,
 				2DCE30CA18B20C9E00E3B050 /* main.m in Sources */,
 				2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */,

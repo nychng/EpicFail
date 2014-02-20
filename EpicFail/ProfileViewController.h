@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  EpicFail
 //
 //  Created by Nai Chng on 17/2/14.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface SecondViewController : UIViewController
+@interface ProfileViewController : UIViewController <FBLoginViewDelegate>
 
 @end

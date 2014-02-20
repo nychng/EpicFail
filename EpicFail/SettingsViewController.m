@@ -19,27 +19,11 @@
 
 @implementation SettingsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -57,19 +41,15 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    // user clicked cancel
+
     if (buttonIndex == 0) {
 
     } else if (buttonIndex == 1) {  // user clicked logout
-        NSLog(@"%@", [PFUser currentUser]);
         [PFUser logOut]; // Log out
-        NSLog(@"%@", [PFUser currentUser]);
-        //LoginViewController *viewController = [[LoginViewController alloc] init];
-        //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
-        //[self.navigationController popToViewController:(UIViewController *)viewController animated:YES];
-        [self.navigationController popToRootViewControllerAnimated:YES];
-        //[self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        NSLog(@"%@", self.navigationController.storyboard);
+
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+//
+//        NSLog(@"%@", self.navigationController.storyboard);
         
         AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
         
@@ -79,13 +59,6 @@
         appDelegateTemp.window.rootViewController = navigation;
 
 
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"main" bundle: nil];
-//        LoginViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
-//        [self.navigationController pushViewController:viewController animated:YES];
-        
-//        LoginViewController *loginViewController = [[LoginViewController alloc] init];
-//        [self.navigationController pushViewController:loginViewController animated:NO];
-//        [self dismissViewControllerAnimated:NO completion:nil];
         
     }
 }

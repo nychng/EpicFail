@@ -7,7 +7,8 @@
 //
 
 #import "LoginViewController.h"
-#import "MainViewController.h"
+#import "ProfileViewController.h"
+#import "HomeViewController.h"
 #import <Parse/Parse.h>
 
 
@@ -32,10 +33,8 @@
 {
     // Check if user is cached and linked to Facebook, if so, bypass login
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        //NSLog(@"%@", [PFUser currentUser]);
-        [self.navigationController pushViewController:[[MainViewController alloc] init] animated:NO];
+        [self.navigationController pushViewController:[[HomeViewController alloc] init] animated:NO];
     } else {
-        //NSLog(@"hello");
     }
 }
 
@@ -60,12 +59,13 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            [self.navigationController pushViewController:[[MainViewController alloc] init] animated:NO];
+            UITabBarController *tbbc = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+            [self.navigationController pushViewController:tbbc animated:NO];
+
         } else {
             NSLog(@"User with facebook logged in!");
-            NSLog(@"%@", [PFUser currentUser]);
-            MainViewController *mvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            [self.navigationController pushViewController:mvc animated:NO];
+            UITabBarController *tbbc = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+            [self.navigationController pushViewController:tbbc animated:NO];
         }
     }];
     [self.activityIndicator startAnimating]; // Show loading indicator until login is finished
