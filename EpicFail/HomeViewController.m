@@ -22,6 +22,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     [self fetchImages];
 }
 
@@ -43,7 +49,6 @@
             self.imageList = [NSMutableArray arrayWithArray:objects];
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
-            [self.refreshControl removeFromSuperview];
         }
     }];
 }
@@ -66,6 +71,17 @@
     }
     
     PFObject *object = self.imageList[indexPath.row];
+    
+    cell.description.text = [object objectForKey:@"description"];
+    
+    NSDate *date = object.createdAt;
+    TTTTimeIntervalFormatter *timeIntervalFormatter = [[TTTTimeIntervalFormatter alloc] init];
+    NSString *dateString = [timeIntervalFormatter stringForTimeInterval:[date timeIntervalSinceNow]]; // "just now"
+    cell.date.text = dateString;
+    
+    PFUser *user = [object objectForKey:@"user"];
+    cell.name.text = [user objectForKey:@"username"];
+
     PFFile *file = [object objectForKey:@"imageFile"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
@@ -76,15 +92,6 @@
         }
     }];
     
-    cell.description.text = [object objectForKey:@"description"];
-
-    NSDate *date = object.createdAt;
-    TTTTimeIntervalFormatter *timeIntervalFormatter = [[TTTTimeIntervalFormatter alloc] init];
-    NSString *dateString = [timeIntervalFormatter stringForTimeInterval:[date timeIntervalSinceNow]]; // "just now"
-    cell.date.text = dateString;
-    
-    PFUser *user = [object objectForKey:@"user"];
-    cell.name.text = [user objectForKey:@"username"];
   
     return cell;
 }

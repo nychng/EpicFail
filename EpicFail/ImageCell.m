@@ -31,4 +31,14 @@
     // Configure the view for the selected state
 }
 
+- (UIActivityIndicatorView *):(UIActivityIndicatorView *)spinner
+{
+    if (!_spinner) {
+        _spinner = [[UIActivityIndicatorView alloc] init];
+    }
+    [_spinner startAnimating];
+    NSLog(@"123123");
+    return _spinner;
+}
+
 @end
