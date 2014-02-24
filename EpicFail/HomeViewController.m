@@ -9,19 +9,15 @@
 #import "HomeViewController.h"
 #import "ImageCell.h"
 #import <Parse/Parse.h>
+#import "TTTTimeIntervalFormatter.h"
 
 @interface HomeViewController ()
 @property (nonatomic, strong) NSMutableArray *imageList;
 
+
 @end
 
 @implementation HomeViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -29,15 +25,16 @@
     [self fetchImages];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)refresh:(id)sender {
+    [self fetchImages];
 }
+
 
 - (void)fetchImages
 {
     PFQuery *query = [PFQuery queryWithClassName:@"UserPhoto"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"user"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (objects.count > 0) {
             for (PFObject *eachObject in objects) {
@@ -45,6 +42,8 @@
             }
             self.imageList = [NSMutableArray arrayWithArray:objects];
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+            [self.refreshControl removeFromSuperview];
         }
     }];
 }
@@ -68,12 +67,30 @@
     
     PFObject *object = self.imageList[indexPath.row];
     PFFile *file = [object objectForKey:@"imageFile"];
-    NSData *imageData = [file getData];
-    UIImage *image = [UIImage imageWithData:imageData];
-    cell.image.image = image;
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.image.image = image;
+            [cell.spinner stopAnimating];
+            [cell.spinner removeFromSuperview];
+        }
+    }];
+    
     cell.description.text = [object objectForKey:@"description"];
+
+    NSDate *date = object.createdAt;
+    TTTTimeIntervalFormatter *timeIntervalFormatter = [[TTTTimeIntervalFormatter alloc] init];
+    NSString *dateString = [timeIntervalFormatter stringForTimeInterval:[date timeIntervalSinceNow]]; // "just now"
+    cell.date.text = dateString;
+    
+    PFUser *user = [object objectForKey:@"user"];
+    cell.name.text = [user objectForKey:@"username"];
   
     return cell;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 @end

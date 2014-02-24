@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D35C50E18B488CD00E01569 /* SettingsViewController.m */; };
 		2D363AA718B6353C000B2569 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D363AA618B6353C000B2569 /* ImageCell.m */; };
+		2D65524818BAFF4500F93A6B /* TTTTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D65524718BAFF4500F93A6B /* TTTTimeIntervalFormatter.m */; };
+		2D65524E18BB044F00F93A6B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D65524D18BB044F00F93A6B /* SDWebImage.framework */; };
+		2D65525018BB046200F93A6B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D65524F18BB046200F93A6B /* ImageIO.framework */; };
 		2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EB9718B5074800E38C1D /* CameraViewController.m */; };
 		2DA8EBE218B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */; };
 		2DA8EBE618B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE418B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -56,6 +59,10 @@
 		2D35C50E18B488CD00E01569 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2D363AA518B6353C000B2569 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		2D363AA618B6353C000B2569 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		2D65524618BAFF4500F93A6B /* TTTTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTimeIntervalFormatter.h; sourceTree = "<group>"; };
+		2D65524718BAFF4500F93A6B /* TTTTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimeIntervalFormatter.m; sourceTree = "<group>"; };
+		2D65524D18BB044F00F93A6B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		2D65524F18BB046200F93A6B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		2DA8EB9618B5074800E38C1D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		2DA8EB9718B5074800E38C1D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D65525018BB046200F93A6B /* ImageIO.framework in Frameworks */,
 				2DCE310818B2113000E3B050 /* SystemConfiguration.framework in Frameworks */,
 				2DCE310618B2112900E3B050 /* StoreKit.framework in Frameworks */,
 				2DCE310418B2112100E3B050 /* Security.framework in Frameworks */,
@@ -113,6 +121,7 @@
 				2DCE30C018B20C9E00E3B050 /* CoreGraphics.framework in Frameworks */,
 				2DCE30FA18B210EE00E3B050 /* CFNetwork.framework in Frameworks */,
 				2DCE30F818B210E700E3B050 /* AudioToolbox.framework in Frameworks */,
+				2D65524E18BB044F00F93A6B /* SDWebImage.framework in Frameworks */,
 				2DCE30C218B20C9E00E3B050 /* UIKit.framework in Frameworks */,
 				2DCE30F618B210D200E3B050 /* Parse.framework in Frameworks */,
 				2DCE30BE18B20C9E00E3B050 /* Foundation.framework in Frameworks */,
@@ -133,6 +142,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D65524918BAFF5200F93A6B /* FormatterKitTimeInterval */ = {
+			isa = PBXGroup;
+			children = (
+				2D65524618BAFF4500F93A6B /* TTTTimeIntervalFormatter.h */,
+				2D65524718BAFF4500F93A6B /* TTTTimeIntervalFormatter.m */,
+			);
+			name = FormatterKitTimeInterval;
+			sourceTree = "<group>";
+		};
+		2D65524A18BAFF7900F93A6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DCE30CF18B20C9E00E3B050 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2D65524B18BAFF9400F93A6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D363AA518B6353C000B2569 /* ImageCell.h */,
+				2D363AA618B6353C000B2569 /* ImageCell.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2D65524C18BAFF9D00F93A6B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DCE310918B2225500E3B050 /* LoginViewController.h */,
+				2DCE310A18B2225500E3B050 /* LoginViewController.m */,
+				2DCE30D218B20C9E00E3B050 /* ProfileViewController.h */,
+				2DCE30D318B20C9E00E3B050 /* ProfileViewController.m */,
+				2DCE30D518B20C9E00E3B050 /* HomeViewController.h */,
+				2DCE30D618B20C9E00E3B050 /* HomeViewController.m */,
+				2D35C50D18B488CD00E01569 /* SettingsViewController.h */,
+				2D35C50E18B488CD00E01569 /* SettingsViewController.m */,
+				2DA8EB9618B5074800E38C1D /* CameraViewController.h */,
+				2DA8EB9718B5074800E38C1D /* CameraViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		2DA8EBE318B5ED7600E38C1D /* TPKeyboardAvoidingScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +218,8 @@
 		2DCE30BC18B20C9E00E3B050 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D65524F18BB046200F93A6B /* ImageIO.framework */,
+				2D65524D18BB044F00F93A6B /* SDWebImage.framework */,
 				2DCE30F518B210D200E3B050 /* Parse.framework */,
 				2DCE310C18B2788700E3B050 /* FacebookSDK.framework */,
 				2DCE310718B2113000E3B050 /* SystemConfiguration.framework */,
@@ -188,21 +242,12 @@
 		2DCE30C318B20C9E00E3B050 /* EpicFail */ = {
 			isa = PBXGroup;
 			children = (
-				2DA8EBE318B5ED7600E38C1D /* TPKeyboardAvoidingScrollView */,
-				2DCE30CF18B20C9E00E3B050 /* Main.storyboard */,
-				2DCE310918B2225500E3B050 /* LoginViewController.h */,
-				2DCE310A18B2225500E3B050 /* LoginViewController.m */,
-				2DCE30D218B20C9E00E3B050 /* ProfileViewController.h */,
-				2DCE30D318B20C9E00E3B050 /* ProfileViewController.m */,
-				2DCE30D518B20C9E00E3B050 /* HomeViewController.h */,
-				2DCE30D618B20C9E00E3B050 /* HomeViewController.m */,
-				2D35C50D18B488CD00E01569 /* SettingsViewController.h */,
-				2D35C50E18B488CD00E01569 /* SettingsViewController.m */,
-				2DA8EB9618B5074800E38C1D /* CameraViewController.h */,
-				2DA8EB9718B5074800E38C1D /* CameraViewController.m */,
-				2D363AA518B6353C000B2569 /* ImageCell.h */,
-				2D363AA618B6353C000B2569 /* ImageCell.m */,
+				2D65524B18BAFF9400F93A6B /* Model */,
+				2D65524A18BAFF7900F93A6B /* View */,
+				2D65524C18BAFF9D00F93A6B /* Controllers */,
 				2DCE30D818B20C9E00E3B050 /* Images.xcassets */,
+				2D65524918BAFF5200F93A6B /* FormatterKitTimeInterval */,
+				2DA8EBE318B5ED7600E38C1D /* TPKeyboardAvoidingScrollView */,
 				2DCE30C418B20C9E00E3B050 /* Supporting Files */,
 			);
 			path = EpicFail;
@@ -346,6 +391,7 @@
 				2DCE30CA18B20C9E00E3B050 /* main.m in Sources */,
 				2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */,
 				2DCE310B18B2225500E3B050 /* LoginViewController.m in Sources */,
+				2D65524818BAFF4500F93A6B /* TTTTimeIntervalFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
