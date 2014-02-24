@@ -32,7 +32,7 @@
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             NSDictionary *userData = (NSDictionary *)result;
-            self.nameLabel.text = userData[@"name"];
+            self.title = userData[@"name"];
             self.profilePictureView.profileID = userData[@"id"];
         }}];
 }
