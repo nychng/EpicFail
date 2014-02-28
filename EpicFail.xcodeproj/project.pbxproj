@@ -14,6 +14,7 @@
 		2D65525018BB046200F93A6B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D65524F18BB046200F93A6B /* ImageIO.framework */; };
 		2D65525318BB59F500F93A6B /* PictureMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D65525218BB59F500F93A6B /* PictureMapViewController.m */; };
 		2D65525518BB5D1F00F93A6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D65525418BB5D1F00F93A6B /* MapKit.framework */; };
+		2D7BFE9618C0833500F40DC6 /* ProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BFE9518C0833500F40DC6 /* ProfileImageCell.m */; };
 		2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EB9718B5074800E38C1D /* CameraViewController.m */; };
 		2DA8EBE218B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */; };
 		2DA8EBE618B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE418B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -68,6 +69,8 @@
 		2D65525118BB59F500F93A6B /* PictureMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMapViewController.h; sourceTree = "<group>"; };
 		2D65525218BB59F500F93A6B /* PictureMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMapViewController.m; sourceTree = "<group>"; };
 		2D65525418BB5D1F00F93A6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2D7BFE9418C0833500F40DC6 /* ProfileImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileImageCell.h; sourceTree = "<group>"; };
+		2D7BFE9518C0833500F40DC6 /* ProfileImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileImageCell.m; sourceTree = "<group>"; };
 		2DA8EB9618B5074800E38C1D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		2DA8EB9718B5074800E38C1D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 			children = (
 				2D363AA518B6353C000B2569 /* ImageCell.h */,
 				2D363AA618B6353C000B2569 /* ImageCell.m */,
+				2D7BFE9418C0833500F40DC6 /* ProfileImageCell.h */,
+				2D7BFE9518C0833500F40DC6 /* ProfileImageCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D7BFE9618C0833500F40DC6 /* ProfileImageCell.m in Sources */,
 				2DCE30D718B20C9E00E3B050 /* HomeViewController.m in Sources */,
 				2D363AA718B6353C000B2569 /* ImageCell.m in Sources */,
 				2D65525318BB59F500F93A6B /* PictureMapViewController.m in Sources */,

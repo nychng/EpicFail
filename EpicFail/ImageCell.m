@@ -37,7 +37,6 @@
         _spinner = [[UIActivityIndicatorView alloc] init];
     }
     [_spinner startAnimating];
-    NSLog(@"123123");
     return _spinner;
 }
 

@@ -43,9 +43,6 @@
     [query includeKey:@"user"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (objects.count > 0) {
-            for (PFObject *eachObject in objects) {
-                [self.imageList addObject:[eachObject objectId]];
-            }
             self.imageList = [NSMutableArray arrayWithArray:objects];
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
