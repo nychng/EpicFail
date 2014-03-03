@@ -9,14 +9,45 @@
 #import "CameraViewController.h"
 #import "ProfileViewController.h"
 #import <Parse/Parse.h>
+#import <ImageIO/ImageIO.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface CameraViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *description;
 @property (strong, nonatomic) IBOutlet UIImageView *capturedImage;
 //@property (nonatomic, strong) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *location;
 @end
 
 @implementation CameraViewController
+
+- (CLLocation *)location:(CLLocation *)location
+{
+    if (!_location) {
+        _location = [[CLLocation alloc] init];
+    }
+    
+    return _location;
+}
+
+- (CLLocationManager *)locationManager:(CLLocation *)locationManager
+{
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+    }
+    _locationManager.delegate = self;
+    
+    return _locationManager;
+}
+
+- (void)setupLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [self.locationManager startUpdatingLocation];
+}
 
 - (IBAction)cancel:(id)sender {
     self.capturedImage.image = nil;
@@ -41,8 +72,19 @@
 
 - (void)uploadImage
 {
-    NSData *imageData = UIImageJPEGRepresentation(self.capturedImage.image, 0.05f);
+    [self setupLocationManager];
+    self.location = self.locationManager.location;
     
+    CLLocationCoordinate2D coord;
+    coord.longitude = self.location.coordinate.longitude;
+    coord.latitude = self.location.coordinate.latitude;
+    // or a one shot fill
+    coord = [self.location coordinate];
+    
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coord.latitude
+                                                  longitude:coord.longitude];
+    
+    NSData *imageData = UIImageJPEGRepresentation(self.capturedImage.image, 0.05f);
     PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:imageData];
     
     // Save PFFile
@@ -53,6 +95,7 @@
             // Create a PFObject around a PFFile and associate it with the current user
             PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
+            [userPhoto setObject:geoPoint forKey:@"location"];
             
             // Set the access control list to current user for security purposes
             userPhoto.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
@@ -107,15 +150,10 @@
 // This method is called when an image has been chosen from the library or taken from the camera.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    self.capturedImage.image = image;
+    //UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image =  [info objectForKey:UIImagePickerControllerOriginalImage];
     [picker dismissViewControllerAnimated:NO completion:nil];
-    
-    // Resize image
-    UIGraphicsBeginImageContext(CGSizeMake(640, 960));
-    [image drawInRect: CGRectMake(0, 0, 640, 960)];
-    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    self.capturedImage.image = image;
 }
 
 

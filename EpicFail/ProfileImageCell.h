@@ -10,5 +10,6 @@
 
 @interface ProfileImageCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

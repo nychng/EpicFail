@@ -15,6 +15,7 @@
 		2D65525318BB59F500F93A6B /* PictureMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D65525218BB59F500F93A6B /* PictureMapViewController.m */; };
 		2D65525518BB5D1F00F93A6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D65525418BB5D1F00F93A6B /* MapKit.framework */; };
 		2D7BFE9618C0833500F40DC6 /* ProfileImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BFE9518C0833500F40DC6 /* ProfileImageCell.m */; };
+		2D7BFE9918C0927400F40DC6 /* ProfileImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BFE9818C0927400F40DC6 /* ProfileImageViewController.m */; };
 		2DA8EB9818B5074800E38C1D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EB9718B5074800E38C1D /* CameraViewController.m */; };
 		2DA8EBE218B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */; };
 		2DA8EBE618B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8EBE418B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -71,6 +72,8 @@
 		2D65525418BB5D1F00F93A6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2D7BFE9418C0833500F40DC6 /* ProfileImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileImageCell.h; sourceTree = "<group>"; };
 		2D7BFE9518C0833500F40DC6 /* ProfileImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileImageCell.m; sourceTree = "<group>"; };
+		2D7BFE9718C0927400F40DC6 /* ProfileImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileImageViewController.h; sourceTree = "<group>"; };
+		2D7BFE9818C0927400F40DC6 /* ProfileImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileImageViewController.m; sourceTree = "<group>"; };
 		2DA8EB9618B5074800E38C1D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		2DA8EB9718B5074800E38C1D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		2DA8EBE018B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				2DA8EB9718B5074800E38C1D /* CameraViewController.m */,
 				2D65525118BB59F500F93A6B /* PictureMapViewController.h */,
 				2D65525218BB59F500F93A6B /* PictureMapViewController.m */,
+				2D7BFE9718C0927400F40DC6 /* ProfileImageViewController.h */,
+				2D7BFE9818C0927400F40DC6 /* ProfileImageViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				2D65525318BB59F500F93A6B /* PictureMapViewController.m in Sources */,
 				2DA8EBE218B5ED6C00E38C1D /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2DCE30CE18B20C9E00E3B050 /* AppDelegate.m in Sources */,
+				2D7BFE9918C0927400F40DC6 /* ProfileImageViewController.m in Sources */,
 				2DCE30D418B20C9E00E3B050 /* ProfileViewController.m in Sources */,
 				2DA8EBE618B5EE7400E38C1D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				2D35C50F18B488CD00E01569 /* SettingsViewController.m in Sources */,
@@ -541,6 +547,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EpicFail/EpicFail-Prefix.pch";
 				INFOPLIST_FILE = "EpicFail/EpicFail-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/nai/Developer/EpicFail,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -559,6 +569,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EpicFail/EpicFail-Prefix.pch";
 				INFOPLIST_FILE = "EpicFail/EpicFail-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/nai/Developer/EpicFail,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

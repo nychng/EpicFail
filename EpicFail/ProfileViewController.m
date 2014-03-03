@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 #import "ProfileImageCell.h"
+#import "ProfileImageViewController.h"
 
 @interface ProfileViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *pictureCount;
@@ -67,6 +68,8 @@
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.imageView.image = [UIImage imageWithData:data];
+            [cell.spinner stopAnimating];
+            [cell.spinner removeFromSuperview];
         }
     }];
     
@@ -93,6 +96,13 @@
     }];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender  {
+    if ([segue.identifier isEqualToString:@"profileImageView"]) {
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+        ProfileImageViewController *pivc = [segue destinationViewController];
+        pivc.object = self.imageList[indexPath.row];
+    }
+}
 
 
 @end
