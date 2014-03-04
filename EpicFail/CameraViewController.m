@@ -49,13 +49,15 @@
     [self.locationManager startUpdatingLocation];
 }
 
-- (IBAction)cancel:(id)sender {
+- (IBAction)cancel:(id)sender
+{
     self.capturedImage.image = nil;
     self.description.text = nil;
     [self.tabBarController setSelectedIndex:0];
 }
 
-- (IBAction)save:(id)sender {
+- (IBAction)save:(id)sender
+{
     [self uploadImage];
 }
 

@@ -8,16 +8,21 @@
 
 #import "PictureMapViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
+
 
 
 @interface PictureMapViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *location;
+@property (nonatomic, strong) NSMutableArray *imageList;
 
 @end
 
 @implementation PictureMapViewController
+
+# pragma - Getters
 
 - (CLLocation *)location:(CLLocation *)location
 {
@@ -38,29 +43,18 @@
     return _locationManager;
 }
 
-//- (void)getLocation:(id)sender {
-//    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-//    [self.locationManager startUpdatingLocation];
-//}
+# pragma - Delegates & Data Sources
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     // update current location here
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setupLocationManager];
+    [self fetchImages];
 
 }
 
@@ -69,6 +63,48 @@
     [self.map setCenterCoordinate:self.map.userLocation.location.coordinate animated:YES];
 }
 
+//- (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
+//{
+//    MKAnnotationView *annotationView = [views objectAtIndex:0];
+//    id<MKAnnotation> mp = [annotationView annotation];
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,350,350);
+//    
+//    [mv setRegion:region animated:YES];
+//    
+//    [self.map selectAnnotation:mp animated:YES];
+//    
+//}
+
+# pragma - Helper Functions
+
+
+- (void)populateMap
+{
+    for (PFObject *obj in self.imageList) {
+
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        PFGeoPoint *coordinate = [obj objectForKey:@"location"];
+        point.coordinate = CLLocationCoordinate2DMake(coordinate.latitude, coordinate.longitude);
+        point.title = [obj objectForKey:@"description"];
+        point.subtitle = @"I'm here!!!";
+        
+        [self.map addAnnotation:point];
+
+    }
+}
+
+- (void)fetchImages
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"UserPhoto"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count > 0) {
+            self.imageList = [NSMutableArray arrayWithArray:objects];
+            [self.map setRegion:self.map.region animated:TRUE];
+            [self populateMap];
+        }
+    }];
+}
 
 - (void)setupLocationManager
 {
@@ -78,10 +114,5 @@
     [self.locationManager startUpdatingLocation];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

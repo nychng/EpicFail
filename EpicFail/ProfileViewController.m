@@ -62,7 +62,6 @@
     ProfileImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier
                                                                            forIndexPath:indexPath];
 
-
     PFObject *object = self.imageList[indexPath.row];
     PFFile *file = [object objectForKey:@"imageFile"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {

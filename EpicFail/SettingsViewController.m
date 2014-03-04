@@ -46,10 +46,6 @@
 
     } else if (buttonIndex == 1) {  // user clicked logout
         [PFUser logOut]; // Log out
-
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//
-//        NSLog(@"%@", self.navigationController.storyboard);
         
         AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
         
